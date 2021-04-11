@@ -95,3 +95,30 @@ raceResults("Tammy", "Todd", "Tina", "Bob");
 
 
 //DESTRUCTURING ARRAYS
+const scores = [12341234,1234,1222234,123,41412346123,23412341234,3242389];
+const highScore = scores[0];
+const secondHighScore = scores[1];
+//Faster way using destructuring
+const [gold, silver, bronze] = scores; //creates 3 new variables from scores based off order of declaration
+console.log(gold, silver);
+const runners = ["Emily", "Bob", "Tim"];
+//can use array destructuring in conjunction with the spread operator as well
+const [fastest, ...others] = runners;
+console.log(fastest, others);
+
+//DESTRUCTURING OBJECTS
+const user = {
+    email: "test@GMAIUL.COM",
+    password: "hunter455",
+    firstName: "Harvey",
+    lastName: "Baxley",
+    born: 1972,
+    died: 2000
+}
+// const firstName = user.firstName;
+// const lastName = user.lastName;
+const { firstName, email, lastName, born } = user; //NAME MATTERS!!!!
+console.log(firstName, email, lastName, born);
+//renaming them while destructuring
+const { born: birthYear } = user; //extracts the value for born and declares it as birthYear
+console.log(birthYear); //DOES NOT HAVE A CONFLICT WITH THE VARIABLE BORN THAT WAS ALREADY DECLARED!!!
