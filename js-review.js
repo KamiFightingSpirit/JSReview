@@ -58,7 +58,40 @@ console.log(combinedObj);
  }
  const newUser = {
      ...registerInfo,
-     id: 3245,
+     id: 234,
      isAdmin: false
  }
  console.log(newUser);
+
+
+ //REST PARAMS
+ //Arguments object is an array like object but it does not have array methods (push, pop, etc)
+ //It is not available in arrow functions
+
+ //doesnt work as arguments is not an array
+//  function sum() {
+//      return arguments.reduce((total, elem) => total += elem );
+//  }
+
+function sum() {
+    return [...arguments].reduce((total, elem) => total += elem);
+}
+ console.log(sum(1,23,4,324,234,5));
+
+ //showing spread operator on params
+ //this is called REST PARAMS ("collect the REST of the values")
+ function sumNums(...nums) {
+    //an actual array is returned
+    return nums.reduce((acc, elem) => acc += elem);
+ }
+console.log(sumNums(1,23,1234,231,4));
+
+function raceResults(gold, silver, ...everyoneElse ) {
+    console.log("gold medal goes to " +  gold);
+    console.log("Also, thanks to all other participants " + everyoneElse);
+}
+
+raceResults("Tammy", "Todd", "Tina", "Bob");
+
+
+//DESTRUCTURING ARRAYS
