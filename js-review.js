@@ -25,3 +25,40 @@ console.log(Math.min(...nums));
 console.log(...nums); //note how it is passing each element into the console.log
 const newString = "hello I am a string";
 console.log(...newString);
+console.log("h", "e", "l", "l")//equivalent
+
+//SPREAD WITH ARRAY LTIERALS
+const cats = ["Doug", "Apoc", "Kira"];
+const dogs = ["Olypmia", "Caramel", "Pele"];
+const pets = [...cats, ...dogs];
+const pets2 = cats.concat(dogs);
+console.log(pets);
+console.log(pets2);
+pets.push(..."hello");
+console.log(pets);
+
+//SPREAD WITH OBJECTS
+//Copies properties from one object into a new object.
+const feline = { legs : 4, family : "Felidae" };
+const canine = { legs : 4, family: "Caninae" };
+//make a deep copy with the same properties;
+const deepCopyFeline = {...feline, hello: "test"};
+// deepCopyFeline.show = "hello";
+console.log(deepCopyFeline);
+const combinedObj = {...feline, ...canine, color: "black"};//there is a conflict here as they both have a family property so it gets overwritten
+console.log(combinedObj);
+ //if you spread an array or string into an object the indices are used as keys
+ console.log({...[1,2,3]}, {..."Hello"});
+
+ //Use case:
+ let registerInfo  = {
+     email : "testuser@gmail.com",
+     firstName: "Andrew",
+     lastName: "Baxley"
+ }
+ const newUser = {
+     ...registerInfo,
+     id: 3245,
+     isAdmin: false
+ }
+ console.log(newUser);
