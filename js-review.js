@@ -122,3 +122,16 @@ console.log(firstName, email, lastName, born);
 //renaming them while destructuring
 const { born: birthYear } = user; //extracts the value for born and declares it as birthYear
 console.log(birthYear); //DOES NOT HAVE A CONFLICT WITH THE VARIABLE BORN THAT WAS ALREADY DECLARED!!!
+//can also set defaults while destructuring objects
+
+//DESTRUCTURING PARAMS
+// function fullName(user) {
+//     // return `${user.firstName} ${user.lastName}`;
+//     const { firstName, lastName } = user;
+//     return `${firstName} ${lastName}`;
+// }
+//CAN ALSO DESTRUCTURE ON THE FUNCTION CALL
+function fullName({firstName, lastName = "DeHuff"}) {
+    return `${firstName} ${lastName}`;
+}
+console.log(fullName(user));
