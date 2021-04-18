@@ -170,7 +170,7 @@ const login = async(username, password) => {
     throw "Invalid Password";
 }
 
-login("akjsjkas", "corgifeetarecute").then(msg => {
+login("akjsjkas", "corgisarecute").then(msg => {
     console.log("Logged in! ", msg);
 }).catch(err => {
     console.log("error: ", err);
