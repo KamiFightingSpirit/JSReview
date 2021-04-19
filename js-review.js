@@ -140,38 +140,44 @@
 //ASYNC AWAIT
 //async functions automatically return a promise
 //In order to use the rejection, we have to throw an error within our async function
-async function hell() {
-    return "promise1 success";
+// async function hell() {
+//     return "promise1 success";
+// }
+// hell().then((data) => {
+//     console.log("Promise resolve: ", data);
+// })
+// // console.log(hell());
+
+
+// //if there is an error within an async function, the promise is in "rejected" state
+// //In order to use the rejection, we have to throw an error within our async function
+// async function hell2() {
+//     throw "Promise2 Massive Error";
+//     return "Promise2 Success!!!";
+// } 
+// // console.log(hell2());
+// hell2().then((data) => {
+//     console.log("Promise resolve: ", data);
+// }).catch((err) => {
+//     console.log("Promise rejected: ", err)
+// });
+
+
+
+// const login = async(username, password) => {
+//     if(!username || !password) throw "Missing Credentials";
+//     if(password === "corgifeetarecute") return "Welcome!";
+//     throw "Invalid Password";
+// }
+
+// login("akjsjkas", "corgisarecute").then(msg => {
+//     console.log("Logged in! ", msg);
+// }).catch(err => {
+//     console.log("error: ", err);
+// })
+
+const testFetch = async () => {
+    const res =  await fetch("https://api.cryptonator.com/api/full/btc-usd");
+    console.log(res);
 }
-hell().then((data) => {
-    console.log("Promise resolve: ", data);
-})
-// console.log(hell());
-
-
-//if there is an error within an async function, the promise is in "rejected" state
-//In order to use the rejection, we have to throw an error within our async function
-async function hell2() {
-    throw "Promise2 Massive Error";
-    return "Promise2 Success!!!";
-} 
-// console.log(hell2());
-hell2().then((data) => {
-    console.log("Promise resolve: ", data);
-}).catch((err) => {
-    console.log("Promise rejected: ", err)
-});
-
-
-
-const login = async(username, password) => {
-    if(!username || !password) throw "Missing Credentials";
-    if(password === "corgifeetarecute") return "Welcome!";
-    throw "Invalid Password";
-}
-
-login("akjsjkas", "corgisarecute").then(msg => {
-    console.log("Logged in! ", msg);
-}).catch(err => {
-    console.log("error: ", err);
-})
+testFetch()
