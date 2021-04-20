@@ -176,8 +176,18 @@
 //     console.log("error: ", err);
 // })
 
-const testFetch = async () => {
-    const res =  await fetch("https://api.cryptonator.com/api/full/btc-usd");
-    console.log(res);
-}
-testFetch()
+
+// Array.prototype.pop = function() {
+//     console.log("lol get wrecked");
+// }
+
+// let newArr = [1,3,43];
+// newArr.push(1);
+// console.log(newArr);
+// console.log('hasjkdakj')
+
+let x = 4;
+let firstTest = -++x + 4 * x; //15
+let secondTest = 4 * x -++x; //14
+console.log(firstTest);
+console.log(secondTest);
